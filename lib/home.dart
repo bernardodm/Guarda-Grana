@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:my_app/addpage.dart';
+import 'package:my_app/carteira.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -179,7 +181,13 @@ class _HomeState extends State<Home> {
       //
       //
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => Addpage(),
+            ),
+          );
+        },
         elevation: 5.0,
         child: Icon(
           Icons.add,
@@ -209,7 +217,13 @@ class _HomeState extends State<Home> {
               color: Colors.white,
               iconSize: 30.0,
               icon: Icon(Icons.wallet),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Carteira(),
+                  ),
+                );
+              },
             ),
           ],
         ),
