@@ -47,7 +47,7 @@ class _AddpageState extends State<Addpage> {
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
               decoration: InputDecoration(
-                border: UnderlineInputBorder(),
+                border: OutlineInputBorder(),
                 labelText: 'Nome:',
               ),
             ),
@@ -56,7 +56,7 @@ class _AddpageState extends State<Addpage> {
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
               decoration: InputDecoration(
-                border: UnderlineInputBorder(),
+                border: OutlineInputBorder(),
                 labelText: 'Valor: (se for despesa, coloque o valor negativo)',
               ),
             ),
@@ -65,7 +65,7 @@ class _AddpageState extends State<Addpage> {
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
               decoration: InputDecoration(
-                border: UnderlineInputBorder(),
+                border: OutlineInputBorder(),
                 labelText: 'Data: (Formato xx/yy/zzzz)',
               ),
             ),
@@ -74,7 +74,7 @@ class _AddpageState extends State<Addpage> {
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
               decoration: InputDecoration(
-                border: UnderlineInputBorder(),
+                border: OutlineInputBorder(),
                 labelText: 'Descrição:',
               ),
             ),
