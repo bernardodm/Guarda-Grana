@@ -1,11 +1,6 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/carteira.dart';
-import 'package:my_app/home.dart';
+import 'package:my_app/features/home/home.dart';
 
 class Addpage extends StatefulWidget {
   const Addpage({super.key});
@@ -24,11 +19,11 @@ class _AddpageState extends State<Addpage> {
         leading: IconButton(
           color: Colors.white,
           iconSize: 30.0,
-          icon: Icon(Icons.person),
+          icon: const Icon(Icons.person),
           onPressed: () {},
         ),
-        title: Text("Bernardo"),
-        actions: [
+        title: const Text("Bernardo"),
+        actions: const [
           Center(
             child: Text("R\$100,00"),
           ),
@@ -41,12 +36,12 @@ class _AddpageState extends State<Addpage> {
       //
       //
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 100),
+        padding: const EdgeInsets.symmetric(vertical: 100),
         children: [
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Nome:',
               ),
@@ -55,7 +50,7 @@ class _AddpageState extends State<Addpage> {
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Valor: (se for despesa, coloque o valor negativo)',
               ),
@@ -64,7 +59,7 @@ class _AddpageState extends State<Addpage> {
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Data: (Formato xx/yy/zzzz)',
               ),
@@ -73,7 +68,7 @@ class _AddpageState extends State<Addpage> {
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Descrição:',
               ),
@@ -92,7 +87,7 @@ class _AddpageState extends State<Addpage> {
                 ),
               ),
               onPressed: () {},
-              child: Text("Salvar"),
+              child: const Text("Salvar"),
             ),
           )
         ],
@@ -108,7 +103,7 @@ class _AddpageState extends State<Addpage> {
           Navigator.of(context).pop();
         },
         elevation: 5.0,
-        child: Icon(
+        child: const Icon(
           Icons.close,
           color: Colors.white,
         ),
@@ -129,11 +124,11 @@ class _AddpageState extends State<Addpage> {
             IconButton(
               color: Colors.white,
               iconSize: 30.0,
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => Home(),
+                    builder: (context) => const Home(),
                   ),
                 );
               },
@@ -141,11 +136,11 @@ class _AddpageState extends State<Addpage> {
             IconButton(
               color: Colors.white,
               iconSize: 30.0,
-              icon: Icon(Icons.wallet),
+              icon: const Icon(Icons.wallet),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => Carteira(),
+                    builder: (context) => const Carteira(),
                   ),
                 );
               },

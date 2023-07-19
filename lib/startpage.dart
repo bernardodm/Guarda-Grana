@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/contalogin.dart';
 import 'package:my_app/loginpage.dart';
 
@@ -16,7 +14,7 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -32,54 +30,54 @@ class _StartPageState extends State<StartPage> {
             children: [
               Center(
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.all(
                       Radius.circular(500),
                     ),
                   ),
-                  child: Center(
-                    child: Text("Logo"),
-                  ),
                   height: 250,
                   width: MediaQuery.of(context).size.width - 300,
+                  child: const Center(
+                    child: Text("Logo"),
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               ElevatedButton(
                 style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(
-                    Size(200, 50),
+                    const Size(200, 50),
                   ),
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => ContaLogin(),
+                      builder: (context) => const ContaLogin(),
                     ),
                   );
                 },
-                child: Text('Criar Conta'),
+                child: const Text('Criar Conta'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
                 style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(
-                    Size(200, 50),
+                    const Size(200, 50),
                   ),
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => LoginPage(),
+                      builder: (context) => const LoginPage(),
                     ),
                   );
                 },
-                child: Text('Fazer Login'),
+                child: const Text('Fazer Login'),
               ),
             ],
           ),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/addpage.dart';
 import 'package:my_app/carteira.dart';
-import 'package:my_app/contalogin.dart';
+import 'package:my_app/shared/widgets/custom_app_bar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,83 +14,42 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            color: Colors.white,
-            iconSize: 30.0,
-            icon: Icon(Icons.remove_red_eye),
-            onPressed: () {},
-          ),
-        ],
-        leading: IconButton(
-          color: Colors.white,
-          iconSize: 30.0,
-          icon: Icon(Icons.person),
-          onPressed: () {},
-        ),
-        title: Text("Olá, $nomeusu"),
-      ),
-      //
-      //
-      //
-      //
-      //
+      appBar: const CustomAppBar(userName: "bernardo"),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
-              child: Container(
+              child: SizedBox(
                 height: 200,
                 width: MediaQuery.of(context).size.width,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    //
-                    //
-                    //
-                    //
-                    Container(
-                      child: Text(
-                        "R\$100,00",
-                        style: TextStyle(
-                          fontSize: 30,
-                        ),
+                    const Text(
+                      "R\$100,00",
+                      style: TextStyle(
+                        fontSize: 30,
                       ),
                     ),
-                    //
-                    //
-                    //
-                    //
-                    Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Container(
-                            child: Text(
-                              "R\$50,00",
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontSize: 20,
-                              ),
-                            ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const [
+                        Text(
+                          "R\$50,00",
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 20,
                           ),
-                          Container(
-                            child: Text(
-                              "R\$20,00",
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 20,
-                              ),
-                            ),
+                        ),
+                        Text(
+                          "R\$20,00",
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 20,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
-                    //
-                    //
-                    //
-                    //
                   ],
                 ),
               ),
@@ -101,7 +58,7 @@ class _HomeState extends State<Home> {
               child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Color.fromARGB(255, 108, 157, 197),
+                    color: const Color.fromARGB(255, 108, 157, 197),
                   ),
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
@@ -110,15 +67,13 @@ class _HomeState extends State<Home> {
                       const SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        child: const Text(
-                          "Atividades Recentes",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                          textAlign: TextAlign.center,
+                      const Text(
+                        "Atividades Recentes",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                       const SizedBox(
                         height: 30,
@@ -129,11 +84,11 @@ class _HomeState extends State<Home> {
                           width: MediaQuery.of(context).size.width - 100,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(200, 255, 255, 255),
+                            color: const Color.fromARGB(200, 255, 255, 255),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Text(
                                 "Comida Japonesa",
                               ),
@@ -145,7 +100,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Center(
@@ -154,11 +109,11 @@ class _HomeState extends State<Home> {
                           width: MediaQuery.of(context).size.width - 100,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(200, 255, 255, 255),
+                            color: const Color.fromARGB(200, 255, 255, 255),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
+                            children: const [
                               Text(
                                 "Pagamento adiantado: Serviço",
                               ),
@@ -185,12 +140,12 @@ class _HomeState extends State<Home> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => Addpage(),
+              builder: (context) => const Addpage(),
             ),
           );
         },
         elevation: 5.0,
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.white,
         ),
@@ -211,17 +166,17 @@ class _HomeState extends State<Home> {
             IconButton(
               color: Colors.white,
               iconSize: 30.0,
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {},
             ),
             IconButton(
               color: Colors.white,
               iconSize: 30.0,
-              icon: Icon(Icons.wallet),
+              icon: const Icon(Icons.wallet),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => Carteira(),
+                    builder: (context) => const Carteira(),
                   ),
                 );
               },

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/contalogin.dart';
-import 'package:my_app/home.dart';
+import 'package:my_app/features/home/home.dart';
 
 String lemail = '';
 String lsenha = '';
@@ -24,17 +22,17 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(right: 50, left: 50),
+        padding: const EdgeInsets.only(right: 50, left: 50),
         child: Form(
           key: formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Faça seu Login!',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               TextFormField(
@@ -53,12 +51,12 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   return null;
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: ('E-mail'),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -75,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 obscureText: _mostrasenha,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   labelText: ('Senha'),
                   suffixIcon: GestureDetector(
                     child: Icon(_mostrasenha == false
@@ -89,40 +87,38 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               ElevatedButton(
                 style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(
-                    Size(200, 50),
+                    const Size(200, 50),
                   ),
                 ),
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => const Home(),
                       ),
                     );
-                  } else {
-                    ;
                   }
                 },
-                child: Text("Entrar"),
+                child: const Text("Entrar"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => ContaLogin(),
+                      builder: (context) => const ContaLogin(),
                     ),
                   );
                 },
-                child: Text("Criar nova conta"),
+                child: const Text("Criar nova conta"),
               ),
             ],
           ),

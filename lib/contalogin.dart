@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/loginpage.dart';
 
 String email = '';
@@ -25,17 +23,17 @@ class _ContaLoginState extends State<ContaLogin> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(right: 50, left: 50),
+        padding: const EdgeInsets.only(right: 50, left: 50),
         child: Form(
           key: formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Crie sua Conta',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               TextFormField(
@@ -50,12 +48,12 @@ class _ContaLoginState extends State<ContaLogin> {
                   }
                   return null;
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: ('Nome'),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -72,12 +70,12 @@ class _ContaLoginState extends State<ContaLogin> {
                   }
                   return null;
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: ('E-mail'),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -94,7 +92,7 @@ class _ContaLoginState extends State<ContaLogin> {
                 },
                 obscureText: _mostrasenha,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   labelText: ('Senha'),
                   suffixIcon: GestureDetector(
                     child: Icon(_mostrasenha == false
@@ -108,7 +106,7 @@ class _ContaLoginState extends State<ContaLogin> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -122,7 +120,7 @@ class _ContaLoginState extends State<ContaLogin> {
                 },
                 obscureText: _mostrasenhaconfirma,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   labelText: ('Confirmar senha'),
                   suffixIcon: GestureDetector(
                     child: Icon(_mostrasenhaconfirma == false
@@ -136,38 +134,38 @@ class _ContaLoginState extends State<ContaLogin> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               ElevatedButton(
                 style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(
-                    Size(200, 50),
+                    const Size(200, 50),
                   ),
                 ),
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => LoginPage(),
+                        builder: (context) => const LoginPage(),
                       ),
                     );
                   }
                 },
-                child: Text("Criar"),
+                child: const Text("Criar"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => LoginPage(),
+                      builder: (context) => const LoginPage(),
                     ),
                   );
                 },
-                child: Text("Já possuo conta!"),
+                child: const Text("Já possuo conta!"),
               ),
             ],
           ),

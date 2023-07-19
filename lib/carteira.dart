@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/addpage.dart';
+import 'package:my_app/shared/widgets/custom_app_bar.dart';
 
 class Carteira extends StatefulWidget {
   const Carteira({super.key});
@@ -14,31 +13,15 @@ class _CarteiraState extends State<Carteira> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          color: Colors.white,
-          iconSize: 30.0,
-          icon: Icon(Icons.person),
-          onPressed: () {},
-        ),
-        title: Text("Bernardo"),
-        actions: [
-          Center(
-            child: Text("R\$100,00"),
-          ),
-        ],
+      appBar: const CustomAppBar(
+        userName: "userName",
+        showValue: true,
+        totalValue: 20,
       ),
-
-      //
-      //
-      //
-      //
-      //
-      //
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             //
@@ -52,17 +35,17 @@ class _CarteiraState extends State<Carteira> {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.blue,
               ),
-              child: Text('Aqui vai ficar o gráfico'),
+              child: const Text('Aqui vai ficar o gráfico'),
             ),
             //
             //
             //
             //
             Padding(
-              padding:
-                  EdgeInsets.only(left: 40, right: 40, bottom: 20, top: 10),
+              padding: const EdgeInsets.only(
+                  left: 40, right: 40, bottom: 20, top: 10),
               child: Row(
-                children: [
+                children: const [
                   Icon(
                     Icons.arrow_upward,
                     color: Colors.green,
@@ -102,17 +85,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(
@@ -120,17 +104,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(
@@ -138,17 +123,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(
@@ -156,17 +142,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(
@@ -174,17 +161,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(
@@ -192,17 +180,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(
@@ -210,17 +199,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(
@@ -228,17 +218,18 @@ class _CarteiraState extends State<Carteira> {
                       height: 70,
                       width: 400,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color.fromARGB(59, 0, 0, 0)),
+                        border: Border.all(
+                            color: const Color.fromARGB(59, 0, 0, 0)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(color: Colors.grey, blurRadius: 10),
                         ],
                       ),
-                      child: Text("Teste"),
+                      child: const Text("Teste"),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],
@@ -251,12 +242,12 @@ class _CarteiraState extends State<Carteira> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => Addpage(),
+              builder: (context) => const Addpage(),
             ),
           );
         },
         elevation: 5.0,
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.white,
         ),
@@ -277,7 +268,7 @@ class _CarteiraState extends State<Carteira> {
             IconButton(
               color: Colors.white,
               iconSize: 30.0,
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -285,7 +276,7 @@ class _CarteiraState extends State<Carteira> {
             IconButton(
               color: Colors.white,
               iconSize: 30.0,
-              icon: Icon(Icons.wallet),
+              icon: const Icon(Icons.wallet),
               onPressed: () {},
             ),
           ],
