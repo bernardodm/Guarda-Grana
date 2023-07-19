@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:my_app/addpage.dart';
 import 'package:my_app/carteira.dart';
+import 'package:my_app/contalogin.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
           icon: Icon(Icons.person),
           onPressed: () {},
         ),
-        title: Text("Bernardo"),
+        title: Text("Olá, $nomeusu"),
       ),
       //
       //
