@@ -16,6 +16,8 @@ class ContaLogin extends StatefulWidget {
 
 class _ContaLoginState extends State<ContaLogin> {
   final formKey = GlobalKey<FormState>();
+  bool _mostrasenha = true;
+  bool _mostrasenhaconfirma = true;
 
   @override
   Widget build(BuildContext context) {
@@ -90,10 +92,20 @@ class _ContaLoginState extends State<ContaLogin> {
                   }
                   return null;
                 },
-                obscureText: true,
+                obscureText: _mostrasenha,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: ('Senha'),
+                  suffixIcon: GestureDetector(
+                    child: Icon(_mostrasenha == false
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                    onTap: () {
+                      setState(() {
+                        _mostrasenha = !_mostrasenha;
+                      });
+                    },
+                  ),
                 ),
               ),
               SizedBox(
@@ -108,16 +120,31 @@ class _ContaLoginState extends State<ContaLogin> {
                   }
                   return null;
                 },
-                obscureText: true,
+                obscureText: _mostrasenhaconfirma,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: ('Confirmar senha'),
+                  suffixIcon: GestureDetector(
+                    child: Icon(_mostrasenhaconfirma == false
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                    onTap: () {
+                      setState(() {
+                        _mostrasenhaconfirma = !_mostrasenhaconfirma;
+                      });
+                    },
+                  ),
                 ),
               ),
               SizedBox(
                 height: 30,
               ),
               ElevatedButton(
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(
+                    Size(200, 50),
+                  ),
+                ),
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     Navigator.of(context).pushReplacement(
@@ -128,6 +155,19 @@ class _ContaLoginState extends State<ContaLogin> {
                   }
                 },
                 child: Text("Criar"),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+                },
+                child: Text("Já possuo conta!"),
               ),
             ],
           ),

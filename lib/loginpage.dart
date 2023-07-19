@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -18,6 +16,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
+  bool _mostrasenha = true;
 
   @override
   Widget build(BuildContext context) {
@@ -74,16 +73,31 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   return null;
                 },
-                obscureText: true,
+                obscureText: _mostrasenha,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: ('Senha'),
+                  suffixIcon: GestureDetector(
+                    child: Icon(_mostrasenha == false
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                    onTap: () {
+                      setState(() {
+                        _mostrasenha = !_mostrasenha;
+                      });
+                    },
+                  ),
                 ),
               ),
               SizedBox(
                 height: 30,
               ),
               ElevatedButton(
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(
+                    Size(200, 50),
+                  ),
+                ),
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     Navigator.of(context).pushReplacement(
@@ -96,6 +110,19 @@ class _LoginPageState extends State<LoginPage> {
                   }
                 },
                 child: Text("Entrar"),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => ContaLogin(),
+                    ),
+                  );
+                },
+                child: Text("Criar nova conta"),
               ),
             ],
           ),
