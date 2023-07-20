@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/contalogin.dart';
-import 'package:my_app/features/home/home.dart';
+import 'package:my_app/login_page.dart';
 
-String lemail = '';
-String lsenha = '';
+String email = '';
+String senha = '';
+String nomeusu = '';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class ContaLogin extends StatefulWidget {
+  const ContaLogin({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<ContaLogin> createState() => _ContaLoginState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _ContaLoginState extends State<ContaLogin> {
   final formKey = GlobalKey<FormState>();
   bool _mostrasenha = true;
+  bool _mostrasenhaconfirma = true;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Faça seu Login!',
+                'Crie sua Conta',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
@@ -37,13 +38,31 @@ class _LoginPageState extends State<LoginPage> {
               ),
               TextFormField(
                 onChanged: (text) {
-                  lemail = text;
+                  nomeusu = text;
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Campo obrigatório';
-                  } else if (email != lemail) {
-                    return 'E-mail não cadastrado';
+                  } else if (value.length < 2) {
+                    return 'Nome de pelo menos 2 caracteres';
+                  }
+                  return null;
+                },
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: ('Nome'),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                onChanged: (text) {
+                  email = text;
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Canpo obrigatório';
                   } else if (value.length < 5) {
                     return 'E-mail incompleto';
                   } else if (!value.contains('@') || !value.contains('.com')) {
@@ -61,13 +80,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
               TextFormField(
                 onChanged: (text) {
-                  lsenha = text;
+                  senha = text;
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Campo obrigatório';
-                  } else if (senha != lsenha) {
-                    return 'Senha incorreta';
+                  } else if (value.length < 5) {
+                    return 'A senha precisa ter pelo menos 6 dígitos';
                   }
                   return null;
                 },
@@ -88,6 +107,34 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                validator: (value) {
+                  if (value != senha) {
+                    return 'Senhas diferentes';
+                  } else if (value == '') {
+                    return 'Campo obrigatório';
+                  }
+                  return null;
+                },
+                obscureText: _mostrasenhaconfirma,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  labelText: ('Confirmar senha'),
+                  suffixIcon: GestureDetector(
+                    child: Icon(_mostrasenhaconfirma == false
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                    onTap: () {
+                      setState(() {
+                        _mostrasenhaconfirma = !_mostrasenhaconfirma;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              const SizedBox(
                 height: 30,
               ),
               ElevatedButton(
@@ -100,12 +147,12 @@ class _LoginPageState extends State<LoginPage> {
                   if (formKey.currentState!.validate()) {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => const Home(),
+                        builder: (context) => const LoginPage(),
                       ),
                     );
                   }
                 },
-                child: const Text("Entrar"),
+                child: const Text("Criar"),
               ),
               const SizedBox(
                 height: 10,
@@ -114,11 +161,11 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => const ContaLogin(),
+                      builder: (context) => const LoginPage(),
                     ),
                   );
                 },
-                child: const Text("Criar nova conta"),
+                child: const Text("Já possuo conta!"),
               ),
             ],
           ),

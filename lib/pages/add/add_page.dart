@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/carteira.dart';
-import 'package:my_app/features/home/home.dart';
+import 'package:my_app/pages/home/home.dart';
+import 'package:my_app/wallet.dart';
 
-class Addpage extends StatefulWidget {
-  const Addpage({super.key});
+class AddPage extends StatelessWidget {
+  AddPage({super.key});
 
-  @override
-  State<Addpage> createState() => _AddpageState();
-}
-
-class _AddpageState extends State<Addpage> {
   final fieldText = TextEditingController();
 
   @override

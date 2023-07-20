@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/addpage.dart';
-import 'package:my_app/carteira.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
+import 'package:my_app/shared/widgets/custom_bottom_bar.dart';
+import 'package:my_app/shared/widgets/custom_flooating_button.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,59 +126,8 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      //
-      //
-      //
-      //
-      //
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const Addpage(),
-            ),
-          );
-        },
-        elevation: 5.0,
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      //
-      //
-      //
-      //
-      //
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.blue,
-        height: 75,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(
-              color: Colors.white,
-              iconSize: 30.0,
-              icon: const Icon(Icons.home),
-              onPressed: () {},
-            ),
-            IconButton(
-              color: Colors.white,
-              iconSize: 30.0,
-              icon: const Icon(Icons.wallet),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Carteira(),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      floatingActionButton: const CustomFlooatingButton(),
+      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }

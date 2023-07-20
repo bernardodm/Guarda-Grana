@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/addpage.dart';
+import 'package:my_app/pages/add/add_page.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
 
-class Carteira extends StatefulWidget {
+class Carteira extends StatelessWidget {
   const Carteira({super.key});
 
-  @override
-  State<Carteira> createState() => _CarteiraState();
-}
-
-class _CarteiraState extends State<Carteira> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -242,7 +237,7 @@ class _CarteiraState extends State<Carteira> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const Addpage(),
+              builder: (context) => AddPage(),
             ),
           );
         },

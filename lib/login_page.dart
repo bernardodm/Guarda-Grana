@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/loginpage.dart';
+import 'package:my_app/create_login.dart';
+import 'package:my_app/pages/home/home.dart';
 
-String email = '';
-String senha = '';
-String nomeusu = '';
+String lemail = '';
+String lsenha = '';
 
-class ContaLogin extends StatefulWidget {
-  const ContaLogin({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<ContaLogin> createState() => _ContaLoginState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _ContaLoginState extends State<ContaLogin> {
+class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
   bool _mostrasenha = true;
-  bool _mostrasenhaconfirma = true;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class _ContaLoginState extends State<ContaLogin> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Crie sua Conta',
+                'Faça seu Login!',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
@@ -38,31 +37,13 @@ class _ContaLoginState extends State<ContaLogin> {
               ),
               TextFormField(
                 onChanged: (text) {
-                  nomeusu = text;
+                  lemail = text;
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Campo obrigatório';
-                  } else if (value.length < 2) {
-                    return 'Nome de pelo menos 2 caracteres';
-                  }
-                  return null;
-                },
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: ('Nome'),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                onChanged: (text) {
-                  email = text;
-                },
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Canpo obrigatório';
+                  } else if (email != lemail) {
+                    return 'E-mail não cadastrado';
                   } else if (value.length < 5) {
                     return 'E-mail incompleto';
                   } else if (!value.contains('@') || !value.contains('.com')) {
@@ -80,13 +61,13 @@ class _ContaLoginState extends State<ContaLogin> {
               ),
               TextFormField(
                 onChanged: (text) {
-                  senha = text;
+                  lsenha = text;
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Campo obrigatório';
-                  } else if (value.length < 5) {
-                    return 'A senha precisa ter pelo menos 6 dígitos';
+                  } else if (senha != lsenha) {
+                    return 'Senha incorreta';
                   }
                   return null;
                 },
@@ -107,34 +88,6 @@ class _ContaLoginState extends State<ContaLogin> {
                 ),
               ),
               const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                validator: (value) {
-                  if (value != senha) {
-                    return 'Senhas diferentes';
-                  } else if (value == '') {
-                    return 'Campo obrigatório';
-                  }
-                  return null;
-                },
-                obscureText: _mostrasenhaconfirma,
-                decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  labelText: ('Confirmar senha'),
-                  suffixIcon: GestureDetector(
-                    child: Icon(_mostrasenhaconfirma == false
-                        ? Icons.visibility_off
-                        : Icons.visibility),
-                    onTap: () {
-                      setState(() {
-                        _mostrasenhaconfirma = !_mostrasenhaconfirma;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              const SizedBox(
                 height: 30,
               ),
               ElevatedButton(
@@ -147,12 +100,12 @@ class _ContaLoginState extends State<ContaLogin> {
                   if (formKey.currentState!.validate()) {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
+                        builder: (context) => const Home(),
                       ),
                     );
                   }
                 },
-                child: const Text("Criar"),
+                child: const Text("Entrar"),
               ),
               const SizedBox(
                 height: 10,
@@ -161,11 +114,11 @@ class _ContaLoginState extends State<ContaLogin> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+                      builder: (context) => const ContaLogin(),
                     ),
                   );
                 },
-                child: const Text("Já possuo conta!"),
+                child: const Text("Criar nova conta"),
               ),
             ],
           ),
