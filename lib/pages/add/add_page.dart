@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/home/home.dart';
-import 'package:my_app/wallet.dart';
+import 'package:my_app/shared/widgets/custom_app_bar.dart';
+import 'package:my_app/shared/widgets/custom_bottom_bar.dart';
+import 'package:my_app/shared/widgets/custom_flooating_button_close.dart';
 
 class AddPage extends StatelessWidget {
   AddPage({super.key});
@@ -10,26 +11,7 @@ class AddPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          color: Colors.white,
-          iconSize: 30.0,
-          icon: const Icon(Icons.person),
-          onPressed: () {},
-        ),
-        title: const Text("Bernardo"),
-        actions: const [
-          Center(
-            child: Text("R\$100,00"),
-          ),
-        ],
-      ),
-      //
-      //
-      //
-      //
-      //
-      //
+      appBar: const CustomAppBar(userName: 'bernardo'),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 100),
         children: [
@@ -87,62 +69,9 @@ class AddPage extends StatelessWidget {
           )
         ],
       ),
-      //
-      //
-      //
-      //
-      //
-      //
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        elevation: 5.0,
-        child: const Icon(
-          Icons.close,
-          color: Colors.white,
-        ),
-      ),
+      floatingActionButton: const CustomFlooatingButtonClose(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      //
-      //
-      //
-      //
-      //
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.blue,
-        height: 75,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(
-              color: Colors.white,
-              iconSize: 30.0,
-              icon: const Icon(Icons.home),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Home(),
-                  ),
-                );
-              },
-            ),
-            IconButton(
-              color: Colors.white,
-              iconSize: 30.0,
-              icon: const Icon(Icons.wallet),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Carteira(),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }
