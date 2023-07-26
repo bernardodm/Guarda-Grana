@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/pages/home/home.dart';
-import 'package:my_app/wallet.dart';
+import 'package:my_app/pages/wallet/wallet.dart';
 
 class CustomBottomBar extends StatefulWidget {
   const CustomBottomBar({super.key});
@@ -38,7 +38,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const Carteira(),
+                  builder: (context) => const Wallet(),
                 ),
               );
             },

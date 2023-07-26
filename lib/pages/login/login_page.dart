@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/create_login.dart';
 import 'package:my_app/pages/home/home.dart';
+import 'package:my_app/pages/login/create_login.dart';
 
 String lemail = '';
 String lsenha = '';
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => const ContaLogin(),
+                      builder: (context) => const CreateLogin(),
                     ),
                   );
                 },

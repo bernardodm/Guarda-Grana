@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/home/home.dart';
+import 'package:my_app/pages/login/start_page.dart';
 
 void main() {
   runApp(
     const MaterialApp(
-      home: Home(),
+      home: StartPage(),
       debugShowCheckedModeBanner: false,
     ),
   );

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/login_page.dart';
+import 'package:my_app/pages/login/login_page.dart';
 
 String email = '';
 String senha = '';
 String nomeusu = '';
 
-class ContaLogin extends StatefulWidget {
-  const ContaLogin({super.key});
+class CreateLogin extends StatefulWidget {
+  const CreateLogin({super.key});
 
   @override
-  State<ContaLogin> createState() => _ContaLoginState();
+  State<CreateLogin> createState() => _CreateLoginState();
 }
 
-class _ContaLoginState extends State<ContaLogin> {
+class _CreateLoginState extends State<CreateLogin> {
   final formKey = GlobalKey<FormState>();
   bool _mostrasenha = true;
   bool _mostrasenhaconfirma = true;
