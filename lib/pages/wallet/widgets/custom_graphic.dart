@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 
 class CustomGraphic extends StatelessWidget {
   const CustomGraphic({super.key});
@@ -12,7 +13,7 @@ class CustomGraphic extends StatelessWidget {
         width: MediaQuery.of(context).size.width - 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.blue,
+          color: color1,
         ),
         child: const Text('Aqui vai ficar o gráfico'),
       ),

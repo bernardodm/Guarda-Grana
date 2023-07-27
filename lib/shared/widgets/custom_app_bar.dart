@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
+import 'package:my_app/pages/login/create_login.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar(
-      {super.key,
-      required this.userName,
-      this.showValue = false,
-      this.totalValue});
+  const CustomAppBar({super.key, this.showValue = false, this.totalValue});
 
-  final String userName;
   final bool showValue;
   final double? totalValue;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: color5,
       toolbarHeight: preferredSize.height,
       actions: [
         if (showValue)

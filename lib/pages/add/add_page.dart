@@ -13,7 +13,6 @@ class AddPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: CustomAppBar(
-        userName: 'bernardo',
         showValue: true,
         totalValue: 20,
       ),

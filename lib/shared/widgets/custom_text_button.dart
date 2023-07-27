@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/main.dart';
 
-class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton(
+class CustomTextButton extends StatelessWidget {
+  const CustomTextButton(
       {super.key, required this.buttonName, required this.buttonNavigator});
 
   final Widget buttonNavigator;
@@ -10,15 +10,12 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: const MaterialStatePropertyAll(color2),
-        minimumSize: MaterialStateProperty.all(
-          const Size(200, 50),
-        ),
+    return TextButton(
+      style: const ButtonStyle(
+        foregroundColor: MaterialStatePropertyAll(color2),
       ),
       onPressed: () {
-        Navigator.of(context).push(
+        Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => buttonNavigator,
           ),

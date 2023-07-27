@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 import 'package:my_app/pages/home/widgets/custom_all_values.dart';
 import 'package:my_app/shared/widgets/custom_activity.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
@@ -11,7 +12,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(userName: "bernardo"),
+      appBar: const CustomAppBar(),
       body: Column(
         children: [
           const CustomAllValues(),
@@ -22,7 +23,7 @@ class Home extends StatelessWidget {
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 ),
-                color: Color.fromARGB(255, 108, 157, 197),
+                color: color1,
               ),
               height: MediaQuery.of(context).size.height - 350,
               width: MediaQuery.of(context).size.width,

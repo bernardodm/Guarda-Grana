@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 import 'package:my_app/pages/home/home.dart';
 import 'package:my_app/pages/wallet/wallet.dart';
 
@@ -13,7 +14,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.blue,
+      color: color5,
       height: 75,
       child: Row(
         mainAxisSize: MainAxisSize.max,

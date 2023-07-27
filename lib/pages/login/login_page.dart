@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 import 'package:my_app/pages/home/home.dart';
 import 'package:my_app/pages/login/create_login.dart';
+import 'package:my_app/shared/widgets/custom_text_button.dart';
 
 String lemail = '';
 String lsenha = '';
@@ -20,6 +22,16 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              color1,
+              Colors.white,
+            ],
+          ),
+        ),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.only(right: 50, left: 50),
@@ -30,7 +42,10 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const Text(
                 'Faça seu Login!',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(
                 height: 50,
@@ -52,6 +67,8 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
                 decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(),
                   labelText: ('E-mail'),
                 ),
@@ -73,6 +90,8 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 obscureText: _mostrasenha,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: const OutlineInputBorder(),
                   labelText: ('Senha'),
                   suffixIcon: GestureDetector(
@@ -92,6 +111,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               ElevatedButton(
                 style: ButtonStyle(
+                  backgroundColor: const MaterialStatePropertyAll(color2),
                   minimumSize: MaterialStateProperty.all(
                     const Size(200, 50),
                   ),
@@ -110,16 +130,10 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 10,
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const CreateLogin(),
-                    ),
-                  );
-                },
-                child: const Text("Criar nova conta"),
-              ),
+              const CustomTextButton(
+                buttonName: 'Criar conta!',
+                buttonNavigator: CreateLogin(),
+              )
             ],
           ),
         ),

@@ -13,7 +13,6 @@ class Wallet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        userName: "Bernardo",
         showValue: true,
         totalValue: 20,
       ),

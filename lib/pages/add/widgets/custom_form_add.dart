@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/home/home.dart';
+import 'package:my_app/shared/widgets/custom_elevated_button.dart';
 
 class CustomFormAdd extends StatelessWidget {
   const CustomFormAdd({super.key});
@@ -44,17 +46,11 @@ class CustomFormAdd extends StatelessWidget {
             ),
           ),
         ),
-        Center(
-          child: ElevatedButton(
-            style: const ButtonStyle(
-              minimumSize: MaterialStatePropertyAll(
-                Size(150, 50),
-              ),
-            ),
-            onPressed: () {},
-            child: const Text("Salvar"),
-          ),
-        ),
+        const Center(
+            child: CustomElevatedButton(
+          buttonName: 'Salvar',
+          buttonNavigator: Home(),
+        )),
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 import 'package:my_app/pages/add/add_page.dart';
 
 class CustomFlooatingButtonAdd extends StatelessWidget {
@@ -6,6 +7,7 @@ class CustomFlooatingButtonAdd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      backgroundColor: color5,
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(

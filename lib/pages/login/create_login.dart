@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 import 'package:my_app/pages/login/login_page.dart';
+import 'package:my_app/shared/widgets/custom_text_button.dart';
 
 String email = '';
 String senha = '';
-String nomeusu = '';
+String userName = '';
 
 class CreateLogin extends StatefulWidget {
   const CreateLogin({super.key});
@@ -21,6 +23,16 @@ class _CreateLoginState extends State<CreateLogin> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              color1,
+              Colors.white,
+            ],
+          ),
+        ),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.only(right: 50, left: 50),
@@ -38,7 +50,7 @@ class _CreateLoginState extends State<CreateLogin> {
               ),
               TextFormField(
                 onChanged: (text) {
-                  nomeusu = text;
+                  userName = text;
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -49,6 +61,8 @@ class _CreateLoginState extends State<CreateLogin> {
                   return null;
                 },
                 decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(),
                   labelText: ('Nome'),
                 ),
@@ -71,6 +85,8 @@ class _CreateLoginState extends State<CreateLogin> {
                   return null;
                 },
                 decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(),
                   labelText: ('E-mail'),
                 ),
@@ -92,6 +108,8 @@ class _CreateLoginState extends State<CreateLogin> {
                 },
                 obscureText: _mostrasenha,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: const OutlineInputBorder(),
                   labelText: ('Senha'),
                   suffixIcon: GestureDetector(
@@ -120,6 +138,8 @@ class _CreateLoginState extends State<CreateLogin> {
                 },
                 obscureText: _mostrasenhaconfirma,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: const OutlineInputBorder(),
                   labelText: ('Confirmar senha'),
                   suffixIcon: GestureDetector(
@@ -139,6 +159,7 @@ class _CreateLoginState extends State<CreateLogin> {
               ),
               ElevatedButton(
                 style: ButtonStyle(
+                  backgroundColor: const MaterialStatePropertyAll(color2),
                   minimumSize: MaterialStateProperty.all(
                     const Size(200, 50),
                   ),
@@ -157,16 +178,10 @@ class _CreateLoginState extends State<CreateLogin> {
               const SizedBox(
                 height: 10,
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                    ),
-                  );
-                },
-                child: const Text("Já possuo conta!"),
-              ),
+              const CustomTextButton(
+                buttonName: 'Já tenho conta!',
+                buttonNavigator: LoginPage(),
+              )
             ],
           ),
         ),

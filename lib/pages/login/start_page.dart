@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
+import 'package:my_app/pages/home/home.dart';
 import 'package:my_app/pages/login/create_login.dart';
 import 'package:my_app/pages/login/login_page.dart';
 import 'package:my_app/pages/login/widgets/custom_logo.dart';
 import 'package:my_app/shared/widgets/custom_elevated_button.dart';
+import 'package:my_app/shared/widgets/custom_text_button.dart';
+
+// Cores:
+// #A0E6C0
+// #2C4035
+// #B1FFD5
+// #85BFA0
+// #59806B
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -21,8 +31,8 @@ class _StartPageState extends State<StartPage> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.blue,
-              Color.fromARGB(255, 196, 228, 255),
+              color1,
+              Colors.white,
             ],
           ),
         ),
@@ -44,7 +54,14 @@ class _StartPageState extends State<StartPage> {
               CustomElevatedButton(
                 buttonName: 'Fazer Login',
                 buttonNavigator: LoginPage(),
-              )
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              CustomTextButton(
+                buttonName: 'Entrar sem Login',
+                buttonNavigator: Home(),
+              ),
             ],
           ),
         ),
