@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
                 ),
                 color: color1,
               ),
-              height: MediaQuery.of(context).size.height - 350,
+              height: MediaQuery.of(context).size.height - 352,
               width: MediaQuery.of(context).size.width,
               child: ListView(
                 children: const [
