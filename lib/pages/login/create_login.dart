@@ -42,7 +42,7 @@ class _CreateLoginState extends State<CreateLogin> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Crie sua Conta',
+                'Crie uma conta',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(

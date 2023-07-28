@@ -29,6 +29,17 @@ class Home extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: ListView(
                 children: const [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Text(
+                        'Atividade recente',
+                        style: TextStyle(fontSize: 20, color: color2),
+                      ),
+                    ),
+                  ),
+                  CustomActivity(),
+                  CustomActivity(),
                   CustomActivity(),
                 ],
               ),

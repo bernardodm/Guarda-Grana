@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 
 class CustomAllValues extends StatelessWidget {
   const CustomAllValues({super.key});
@@ -12,28 +13,62 @@ class CustomAllValues extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              "R\$100,00",
-              style: TextStyle(
-                fontSize: 30,
-              ),
-            ),
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Text(
-                  "R\$50,00",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 20,
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: 60,
+                  ),
+                  child: Text(
+                    'Meu Saldo:',
+                    style: TextStyle(
+                      color: color2,
+                    ),
                   ),
                 ),
                 Text(
-                  "R\$20,00",
+                  "R\$100,00",
                   style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 20,
+                    fontSize: 30,
                   ),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Row(
+                  children: const [
+                    Icon(
+                      Icons.arrow_upward,
+                      color: Colors.green,
+                      size: 30,
+                    ),
+                    Text(
+                      "R\$50,00",
+                      style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: const [
+                    Icon(
+                      Icons.arrow_downward,
+                      color: Colors.red,
+                      size: 30,
+                    ),
+                    Text(
+                      "R\$20,00",
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             )
