@@ -32,7 +32,7 @@ class _StartPageState extends State<StartPage> {
             end: Alignment.bottomRight,
             colors: [
               color1,
-              color2,
+              Colors.white,
             ],
           ),
         ),
