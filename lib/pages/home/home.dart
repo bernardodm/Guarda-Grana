@@ -38,9 +38,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
                   ),
-                  CustomActivity(),
-                  CustomActivity(),
-                  CustomActivity(),
+                  CustomActivity()
                 ],
               ),
             ),

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+String nameForm = '';
+String valueForm = '';
+String dataForm = '';
+String descriptionForm = '';
+
 class CustomActivity extends StatelessWidget {
   const CustomActivity({super.key});
 
@@ -21,13 +26,13 @@ class CustomActivity extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
-                "Comida Japonesa",
+                nameForm,
               ),
               Text(
-                "R\$60,00",
-                style: TextStyle(color: Colors.red),
+                valueForm,
+                style: const TextStyle(color: Colors.red),
               )
             ],
           ),
