@@ -1,3 +1,3 @@
-# my_app
+# Guarda Grana
  Aplicativo para controle financeiro
  
