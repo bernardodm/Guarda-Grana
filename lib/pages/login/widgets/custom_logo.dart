@@ -8,8 +8,12 @@ class CustomLogo extends StatelessWidget {
     return Center(
       child: SizedBox(
         height: 250,
-        width: MediaQuery.of(context).size.width - 300,
-        child: const Center(child: FlutterLogo()),
+        width: MediaQuery.of(context).size.width,
+        child: Center(
+          child: Image.asset(
+            'assets/images/logoGreen2.png',
+          ),
+        ),
       ),
     );
   }

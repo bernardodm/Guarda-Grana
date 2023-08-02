@@ -4,6 +4,7 @@ import 'package:my_app/pages/home/widgets/custom_all_values.dart';
 import 'package:my_app/shared/widgets/custom_activity.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
 import 'package:my_app/shared/widgets/custom_bottom_bar.dart';
+import 'package:my_app/shared/widgets/custom_drawer.dart';
 import 'package:my_app/shared/widgets/custom_flooating_button_add.dart';
 
 class Home extends StatelessWidget {
@@ -12,6 +13,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const CustomDrawer(),
       appBar: const CustomAppBar(),
       body: Column(
         children: [

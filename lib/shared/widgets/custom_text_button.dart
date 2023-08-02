@@ -15,7 +15,7 @@ class CustomTextButton extends StatelessWidget {
         foregroundColor: MaterialStatePropertyAll(color2),
       ),
       onPressed: () {
-        Navigator.of(context).pushReplacement(
+        Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => buttonNavigator,
           ),
