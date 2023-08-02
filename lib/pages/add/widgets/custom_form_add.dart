@@ -99,7 +99,6 @@ class _CustomFormAddState extends State<CustomFormAdd> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   activity.add(formNameController.text);
-
                   formNameController.clear();
                 }
               },
@@ -108,15 +107,6 @@ class _CustomFormAddState extends State<CustomFormAdd> {
           ),
         ],
       ),
-    );
-    Expanded(
-      child: ListView.builder(
-          itemCount: activity.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(activity[index]),
-            );
-          }),
     );
   }
 }
