@@ -10,9 +10,7 @@ class CustomLogo extends StatelessWidget {
         height: 250,
         width: MediaQuery.of(context).size.width,
         child: Center(
-          child: Image.asset(
-            'assets/images/logoGreen2.png',
-          ),
+          child: Image.asset('assets/images/logoGreen2.png'),
         ),
       ),
     );

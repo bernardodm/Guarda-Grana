@@ -4,6 +4,7 @@ import 'package:my_app/pages/wallet/widgets/custom_income_and_expenses.dart';
 import 'package:my_app/shared/widgets/custom_activity.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
 import 'package:my_app/shared/widgets/custom_bottom_bar.dart';
+import 'package:my_app/shared/widgets/custom_drawer.dart';
 import 'package:my_app/shared/widgets/custom_flooating_button_add.dart';
 
 class Wallet extends StatelessWidget {
@@ -12,6 +13,7 @@ class Wallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const CustomDrawer(),
       appBar: const CustomAppBar(
         showValue: true,
         totalValue: 20,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/main.dart';
 
 final activity = <String>[];
 
@@ -91,7 +92,7 @@ class _CustomFormAddState extends State<CustomFormAdd> {
           Center(
             child: ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: const MaterialStatePropertyAll(Colors.green),
+                backgroundColor: const MaterialStatePropertyAll(color5),
                 minimumSize: MaterialStateProperty.all(
                   const Size(200, 50),
                 ),
