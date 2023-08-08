@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/wallet/wallet.dart';
+import 'package:my_app/pages/login/start_page.dart';
 
 const color1 = Color(0xFFA0E6C0);
 const color2 = Color(0xFF2C4035);
@@ -10,7 +10,7 @@ const color5 = Color(0xFF59806B);
 void main() {
   runApp(
     const MaterialApp(
-      home: Wallet(),
+      home: StartPage(),
       debugShowCheckedModeBanner: false,
     ),
   );
