@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/pages/wallet/widgets/custom_graphic.dart';
 import 'package:my_app/pages/wallet/widgets/custom_income_and_expenses.dart';
-import 'package:my_app/shared/widgets/custom_activity.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
 import 'package:my_app/shared/widgets/custom_bottom_bar.dart';
 import 'package:my_app/shared/widgets/custom_drawer.dart';
@@ -28,7 +27,7 @@ class Wallet extends StatelessWidget {
               width: MediaQuery.of(context).size.width - 50,
               child: ListView(
                 children: const [
-                  CustomActivity(),
+                  //CustomActivity(),
                 ],
               ),
             )
