@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
 import 'package:my_app/pages/login/create_login.dart';
 import 'package:my_app/pages/login/login_page.dart';
+import 'package:my_app/shared/themes/colors.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -9,7 +9,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: color5,
+      backgroundColor: CustomColors.color5,
       child: Column(
         children: [
           if (userName == '')
@@ -51,7 +51,7 @@ class CustomDrawer extends StatelessWidget {
                         child: const Text(
                           'Entrar',
                           style: TextStyle(
-                              color: color2,
+                              color: CustomColors.color2,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
@@ -121,7 +121,7 @@ class CustomDrawer extends StatelessWidget {
                         child: const Text(
                           'Sair',
                           style: TextStyle(
-                              color: color2,
+                              color: CustomColors.color2,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),

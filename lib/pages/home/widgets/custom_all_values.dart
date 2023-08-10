@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
+import 'package:my_app/shared/themes/colors.dart';
 
 class CustomAllValues extends StatelessWidget {
   const CustomAllValues({super.key});
@@ -11,7 +11,7 @@ class CustomAllValues extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Container(
           decoration: const BoxDecoration(
-            color: color5,
+            color: CustomColors.color5,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(50),
               bottomRight: Radius.circular(50),
@@ -34,7 +34,7 @@ class CustomAllValues extends StatelessWidget {
                     child: Text(
                       'Meu Saldo:',
                       style: TextStyle(
-                        color: color2,
+                        color: CustomColors.color2,
                       ),
                     ),
                   ),

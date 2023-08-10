@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
 import 'package:my_app/pages/login/create_login.dart';
+import 'package:my_app/shared/themes/colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key, this.showValue = false, this.totalValue});
@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: color5,
+      backgroundColor: CustomColors.color5,
       toolbarHeight: preferredSize.height,
       actions: [
         if (showValue)

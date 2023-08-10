@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
+import 'package:my_app/shared/themes/colors.dart';
 import 'package:my_app/pages/home/home.dart';
 import 'package:my_app/pages/login/create_login.dart';
 import 'package:my_app/pages/login/login_page.dart';
@@ -31,7 +31,7 @@ class _StartPageState extends State<StartPage> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              color1,
+              CustomColors.color1,
               Colors.white,
             ],
           ),

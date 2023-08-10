@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/add/widgets/custom_form_add.dart';
+import 'package:my_app/shared/models/activity.dart';
 
 class CustomActivity extends StatefulWidget {
   const CustomActivity({super.key});

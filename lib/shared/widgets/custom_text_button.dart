@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
+import 'package:my_app/shared/themes/colors.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton(
@@ -12,7 +12,7 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: const ButtonStyle(
-        foregroundColor: MaterialStatePropertyAll(color2),
+        foregroundColor: MaterialStatePropertyAll(CustomColors.color2),
       ),
       onPressed: () {
         Navigator.of(context).push(

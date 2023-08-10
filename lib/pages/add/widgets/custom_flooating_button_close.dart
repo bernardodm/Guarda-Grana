@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
+import 'package:my_app/shared/themes/colors.dart';
 
 class CustomFlooatingButtonClose extends StatelessWidget {
   const CustomFlooatingButtonClose({super.key});
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: color5,
+      backgroundColor: CustomColors.color5,
       onPressed: () {
         Navigator.of(context).pop();
       },

@@ -1,18 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
-
-class Activity {
-  final String nameForm;
-  final double valueForm;
-  final String dateForm;
-  final String descriptionForm;
-
-  Activity(
-      {required this.nameForm,
-      required this.valueForm,
-      required this.dateForm,
-      required this.descriptionForm});
-}
+import 'package:my_app/shared/models/activity.dart';
+import 'package:my_app/shared/themes/colors.dart';
 
 class CustomFormAdd extends StatefulWidget {
   const CustomFormAdd({super.key});
@@ -120,7 +108,8 @@ class _CustomFormAddState extends State<CustomFormAdd> {
           Center(
             child: ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: const MaterialStatePropertyAll(color5),
+                backgroundColor:
+                    const MaterialStatePropertyAll(CustomColors.color5),
                 minimumSize: MaterialStateProperty.all(
                   const Size(200, 50),
                 ),

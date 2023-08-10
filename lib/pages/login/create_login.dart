@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
 import 'package:my_app/pages/login/login_page.dart';
+import 'package:my_app/shared/themes/colors.dart';
 import 'package:my_app/shared/widgets/custom_text_button.dart';
 
 String email = '';
@@ -28,7 +28,7 @@ class _CreateLoginState extends State<CreateLogin> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              color1,
+              CustomColors.color1,
               Colors.white,
             ],
           ),
@@ -159,7 +159,8 @@ class _CreateLoginState extends State<CreateLogin> {
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: const MaterialStatePropertyAll(color2),
+                  backgroundColor:
+                      const MaterialStatePropertyAll(CustomColors.color2),
                   minimumSize: MaterialStateProperty.all(
                     const Size(200, 50),
                   ),
