@@ -21,12 +21,12 @@ class CustomAllValues extends StatelessWidget {
           ),
           height: 200,
           width: MediaQuery.of(context).size.width,
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Padding(
                     padding: EdgeInsets.only(
                       right: 60,
@@ -50,7 +50,7 @@ class CustomAllValues extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.arrow_upward,
                         color: Colors.green,
@@ -66,7 +66,7 @@ class CustomAllValues extends StatelessWidget {
                     ],
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.arrow_downward,
                         color: Colors.red,
