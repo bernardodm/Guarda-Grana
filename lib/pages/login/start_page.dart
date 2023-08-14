@@ -6,6 +6,7 @@ import 'package:my_app/pages/login/login_page.dart';
 import 'package:my_app/pages/login/widgets/custom_logo.dart';
 import 'package:my_app/shared/widgets/custom_elevated_button.dart';
 import 'package:my_app/shared/widgets/custom_text_button.dart';
+import 'package:my_app/shared/themes/colors.dart';
 
 // Cores:
 // #A0E6C0
@@ -36,10 +37,10 @@ class _StartPageState extends State<StartPage> {
             ],
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 200),
+        child: const Padding(
+          padding: EdgeInsets.only(top: 200),
           child: Column(
-            children: const [
+            children: [
               CustomLogo(),
               SizedBox(
                 height: 100,
@@ -55,8 +56,11 @@ class _StartPageState extends State<StartPage> {
                 buttonName: 'Fazer Login',
                 buttonNavigator: LoginPage(),
               ),
-              SizedBox(
-                height: 50,
+              Divider(
+                height: 40,
+                indent: 150,
+                endIndent: 150,
+                color: CustomColors.color2,
               ),
               CustomTextButton(
                 buttonName: 'Entrar sem Login',

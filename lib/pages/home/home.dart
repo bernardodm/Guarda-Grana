@@ -13,10 +13,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const CustomDrawer(),
-      appBar: const CustomAppBar(),
+      drawer: CustomDrawer(),
+      appBar: CustomAppBar(),
       body: Column(
-        children: const [
+        children: [
           CustomAllValues(),
           Center(
             child: Text(
@@ -27,9 +27,9 @@ class Home extends StatelessWidget {
           CustomActivity(),
         ],
       ),
-      floatingActionButton: const CustomFlooatingButtonAdd(),
+      floatingActionButton: CustomFlooatingButtonAdd(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const CustomBottomBar(),
+      bottomNavigationBar: CustomBottomBar(),
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 import 'package:my_app/shared/themes/colors.dart';
 
@@ -34,7 +36,7 @@ class CustomAllValues extends StatelessWidget {
                     child: Text(
                       'Meu Saldo:',
                       style: TextStyle(
-                        color: CustomColors.color2,
+                        color: Colors.white,
                       ),
                     ),
                   ),

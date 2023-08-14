@@ -176,8 +176,11 @@ class _CreateLoginState extends State<CreateLogin> {
                 },
                 child: const Text("Criar"),
               ),
-              const SizedBox(
-                height: 10,
+              Divider(
+                height: 40,
+                indent: 100,
+                endIndent: 100,
+                color: CustomColors.color2,
               ),
               const CustomTextButton(
                 buttonName: 'Já tenho conta!',
