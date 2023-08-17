@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/shared/themes/colors.dart';
 import 'package:my_app/pages/home/home.dart';
 import 'package:my_app/pages/login/create_login.dart';
 import 'package:my_app/pages/login/login_page.dart';
 import 'package:my_app/pages/login/widgets/custom_logo.dart';
+import 'package:my_app/shared/themes/colors.dart';
 import 'package:my_app/shared/widgets/custom_elevated_button.dart';
 import 'package:my_app/shared/widgets/custom_text_button.dart';
-import 'package:my_app/shared/themes/colors.dart';
 
 // Cores:
 // #A0E6C0

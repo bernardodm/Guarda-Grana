@@ -26,8 +26,8 @@ class Wallet extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height - 460,
               width: MediaQuery.of(context).size.width - 50,
-              child: Column(
-                children: const [
+              child: const Column(
+                children: [
                   CustomActivity(),
                 ],
               ),

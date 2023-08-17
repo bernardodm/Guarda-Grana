@@ -128,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 child: const Text("Entrar"),
               ),
-              Divider(
+              const Divider(
                 height: 40,
                 indent: 100,
                 endIndent: 100,

@@ -5,10 +5,10 @@ class CustomIncomeAndExpenses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 40, right: 40, bottom: 20, top: 10),
+    return const Padding(
+      padding: EdgeInsets.only(left: 40, right: 40, bottom: 20, top: 10),
       child: Row(
-        children: const [
+        children: [
           Icon(
             Icons.arrow_upward,
             color: Colors.green,

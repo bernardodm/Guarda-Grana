@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       drawer: CustomDrawer(),
       appBar: CustomAppBar(),
       body: Column(

@@ -176,7 +176,7 @@ class _CreateLoginState extends State<CreateLogin> {
                 },
                 child: const Text("Criar"),
               ),
-              Divider(
+              const Divider(
                 height: 40,
                 indent: 100,
                 endIndent: 100,
