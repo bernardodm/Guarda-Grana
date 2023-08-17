@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/pages/home/widgets/custom_all_values.dart';
-import 'package:my_app/shared/themes/colors.dart';
-import 'package:my_app/shared/widgets/custom_activity.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
 import 'package:my_app/shared/widgets/custom_bottom_bar.dart';
 import 'package:my_app/shared/widgets/custom_drawer.dart';
 import 'package:my_app/shared/widgets/custom_flooating_button_add.dart';
+
+import '../../shared/themes/colors.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -18,13 +18,10 @@ class Home extends StatelessWidget {
       body: Column(
         children: [
           CustomAllValues(),
-          Center(
-            child: Text(
-              'Atividade recente',
-              style: TextStyle(fontSize: 20, color: CustomColors.color2),
-            ),
+          Text(
+            'Atividade recente',
+            style: TextStyle(fontSize: 20, color: CustomColors.color2),
           ),
-          CustomActivity(),
         ],
       ),
       floatingActionButton: CustomFlooatingButtonAdd(),
