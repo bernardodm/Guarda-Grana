@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/shared/models/activity.dart';
 import 'package:my_app/shared/themes/colors.dart';
+
+class TodoItem {
+  final String name, description;
+  final double value;
+  TodoItem(
+      {required this.name, required this.description, required this.value});
+}
 
 class CustomFormAdd extends StatefulWidget {
   const CustomFormAdd({super.key});
@@ -15,23 +21,6 @@ class _CustomFormAddState extends State<CustomFormAdd> {
   final _descriptionController = TextEditingController();
   final _valueController = TextEditingController();
   final _dateController = TextEditingController();
-
-  void _saveForm() {
-    if (_formKey.currentState!.validate()) {
-      final nameForm = _nameController.text;
-      final valueForm = double.parse(_valueController.text);
-      final descriptionForm = _descriptionController.text;
-      final dateForm = _dateController.text;
-
-      final newActivity = Activity(
-          nameForm: nameForm,
-          valueForm: valueForm,
-          dateForm: dateForm,
-          descriptionForm: descriptionForm);
-
-      Navigator.pop(context, newActivity);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,18 +94,25 @@ class _CustomFormAddState extends State<CustomFormAdd> {
               },
             ),
           ),
-          Center(
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor:
-                    const MaterialStatePropertyAll(CustomColors.color5),
-                minimumSize: MaterialStateProperty.all(
-                  const Size(200, 50),
-                ),
+          ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor:
+                  const MaterialStatePropertyAll(CustomColors.color5),
+              minimumSize: MaterialStateProperty.all(
+                const Size(200, 50),
               ),
-              onPressed: _saveForm,
-              child: const Text('Salvar'),
             ),
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                final newActivity = TodoItem(
+                  name: _nameController.text,
+                  description: _descriptionController.text,
+                  value: double.parse(_valueController.text),
+                );
+                Navigator.pop(context, newActivity);
+              }
+            },
+            child: const Text('Salvar'),
           ),
         ],
       ),
