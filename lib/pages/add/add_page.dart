@@ -18,7 +18,7 @@ class AddPage extends StatelessWidget {
         showValue: true,
         totalValue: 20,
       ),
-      body: AddTodoPage(),
+      body: CustomFormAdd(),
       floatingActionButton: CustomFlooatingButtonClose(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: CustomBottomBar(),

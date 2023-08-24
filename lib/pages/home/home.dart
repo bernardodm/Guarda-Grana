@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/pages/home/widgets/custom_all_values.dart';
+import 'package:my_app/shared/widgets/custom_activity.dart';
 import 'package:my_app/shared/widgets/custom_app_bar.dart';
 import 'package:my_app/shared/widgets/custom_bottom_bar.dart';
 import 'package:my_app/shared/widgets/custom_drawer.dart';
@@ -22,6 +23,7 @@ class Home extends StatelessWidget {
             'Atividade recente',
             style: TextStyle(fontSize: 20, color: CustomColors.color2),
           ),
+          CustomActivity(),
         ],
       ),
       floatingActionButton: CustomFlooatingButtonAdd(),
