@@ -13,13 +13,17 @@ class _CustomActivityState extends State<CustomActivity> {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: activity.length,
+        itemCount: activityName.length,
         itemBuilder: (context, index) {
           return Card(
             child: ListTile(
               title: Text(
-                activity[index],
+                activityName[index],
               ),
+              subtitle: Text(
+                activityDescription[index],
+              ),
+              trailing: Text('R\$ ${activityValue[index].toStringAsFixed(2)}'),
             ),
           );
         },

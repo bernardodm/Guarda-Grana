@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/shared/themes/colors.dart';
 
-List<String> activity = [];
+List<String> activityName = [];
+List<String> activityDescription = [];
+List<double> activityValue = [];
 
 class CustomFormAdd extends StatefulWidget {
   const CustomFormAdd({super.key});
@@ -64,11 +66,19 @@ class _CustomFormAddState extends State<CustomFormAdd> {
                     backgroundColor:
                         MaterialStatePropertyAll(CustomColors.color5)),
                 onPressed: () {
+                  double valueForm = double.parse(_valueController.text);
+
                   if (_formKey.currentState!.validate()) {
-                    setState(() {
-                      activity.add(_nameController.text);
-                    });
+                    setState(
+                      () {
+                        activityName.add(_nameController.text);
+                        activityDescription.add(_descriptionController.text);
+                        activityValue.add(valueForm);
+                      },
+                    );
                     _nameController.clear();
+                    _descriptionController.clear();
+                    _valueController.clear();
                   }
                 },
                 child: const Text('Salvar'),
