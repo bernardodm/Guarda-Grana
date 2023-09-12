@@ -16,7 +16,6 @@ class Wallet extends StatelessWidget {
       drawer: const CustomDrawer(),
       appBar: const CustomAppBar(
         showValue: true,
-        totalValue: 20,
       ),
       body: SingleChildScrollView(
         child: Column(

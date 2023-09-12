@@ -15,17 +15,39 @@ class _CustomActivityState extends State<CustomActivity> {
       child: ListView.builder(
         itemCount: activityName.length,
         itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              title: Text(
-                activityName[index],
+          if (activityValue[index] > 0) {
+            return Card(
+              child: ListTile(
+                title: Text(
+                  activityName[index],
+                ),
+                subtitle: Text(
+                  activityDescription[index],
+                ),
+                trailing: Text(
+                  'R\$ ${activityValue[index].toStringAsFixed(2)}',
+                  style: const TextStyle(color: Colors.green),
+                ),
               ),
-              subtitle: Text(
-                activityDescription[index],
+            );
+          }
+          if (activityValue[index] < 0) {
+            return Card(
+              child: ListTile(
+                title: Text(
+                  activityName[index],
+                ),
+                subtitle: Text(
+                  activityDescription[index],
+                ),
+                trailing: Text(
+                  'R\$ ${activityValue[index].toStringAsFixed(2)}',
+                  style: const TextStyle(color: Colors.red),
+                ),
               ),
-              trailing: Text('R\$ ${activityValue[index].toStringAsFixed(2)}'),
-            ),
-          );
+            );
+          }
+          return null;
         },
       ),
     );

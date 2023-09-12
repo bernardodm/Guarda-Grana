@@ -16,7 +16,6 @@ class AddPage extends StatelessWidget {
       drawer: CustomDrawer(),
       appBar: CustomAppBar(
         showValue: true,
-        totalValue: 20,
       ),
       body: CustomFormAdd(),
       floatingActionButton: CustomFlooatingButtonClose(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/add/widgets/custom_form_add.dart';
 import 'package:my_app/shared/themes/colors.dart';
 
 class CustomAllValues extends StatelessWidget {
@@ -21,26 +22,21 @@ class CustomAllValues extends StatelessWidget {
           ),
           height: 200,
           width: MediaQuery.of(context).size.width,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      right: 60,
-                    ),
-                    child: Text(
-                      'Meu Saldo:',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                  const Text(
+                    'Meu Saldo:',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
                   ),
                   Text(
-                    "R\$100,00",
-                    style: TextStyle(
+                    'R\$ ${totalValue.toStringAsFixed(2)}',
+                    style: const TextStyle(
                       fontSize: 30,
                     ),
                   ),
@@ -51,14 +47,14 @@ class CustomAllValues extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.arrow_upward,
                         color: Colors.green,
                         size: 30,
                       ),
                       Text(
-                        "R\$50,00",
-                        style: TextStyle(
+                        'R\$ ${positiveValue.toStringAsFixed(2)}',
+                        style: const TextStyle(
                           color: Colors.green,
                           fontSize: 20,
                         ),
@@ -67,14 +63,14 @@ class CustomAllValues extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.arrow_downward,
                         color: Colors.red,
                         size: 30,
                       ),
                       Text(
-                        "R\$20,00",
-                        style: TextStyle(
+                        'R\$ ${negativeValue.toStringAsFixed(2)}',
+                        style: const TextStyle(
                           color: Colors.red,
                           fontSize: 20,
                         ),

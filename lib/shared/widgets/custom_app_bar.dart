@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/add/widgets/custom_form_add.dart';
 import 'package:my_app/pages/login/create_login.dart';
 import 'package:my_app/shared/themes/colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, this.showValue = false, this.totalValue});
+  const CustomAppBar({super.key, this.showValue = false});
 
   final bool showValue;
-  final double? totalValue;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         if (showValue)
           Center(
             child: Text(
-              totalValue.toString(),
+              'R\$ ${totalValue.toStringAsFixed(2)}',
             ),
           )
         else

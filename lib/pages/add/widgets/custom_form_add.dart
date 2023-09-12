@@ -4,6 +4,9 @@ import 'package:my_app/shared/themes/colors.dart';
 List<String> activityName = [];
 List<String> activityDescription = [];
 List<double> activityValue = [];
+double totalValue = 0;
+double positiveValue = 0;
+double negativeValue = 0;
 
 class CustomFormAdd extends StatefulWidget {
   const CustomFormAdd({super.key});
@@ -56,7 +59,7 @@ class _CustomFormAddState extends State<CustomFormAdd> {
                   validator: (v) {
                     if (v!.isEmpty) return 'Digite um valor.';
                     final value = double.tryParse(v);
-                    if (value == null || value <= 0) return 'Valor inválido.';
+                    if (value == null) return 'Valor inválido.';
                     return null;
                   },
                 ),
@@ -74,6 +77,13 @@ class _CustomFormAddState extends State<CustomFormAdd> {
                         activityName.add(_nameController.text);
                         activityDescription.add(_descriptionController.text);
                         activityValue.add(valueForm);
+                        totalValue += valueForm;
+                        if (valueForm > 0) {
+                          positiveValue += valueForm;
+                        }
+                        if (valueForm < 0) {
+                          negativeValue += valueForm;
+                        }
                       },
                     );
                     _nameController.clear();

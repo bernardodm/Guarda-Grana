@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/add/widgets/custom_form_add.dart';
 
 class CustomIncomeAndExpenses extends StatelessWidget {
   const CustomIncomeAndExpenses({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: 40, right: 40, bottom: 20, top: 10),
+    return Padding(
+      padding: const EdgeInsets.only(left: 40, right: 40, bottom: 20, top: 10),
       child: Row(
         children: [
-          Icon(
+          const Icon(
             Icons.arrow_upward,
             color: Colors.green,
           ),
           Text(
-            'R\$100,00',
-            style: TextStyle(
+            'R\$ ${positiveValue.toStringAsFixed(2)}',
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.green,
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 10,
           ),
-          Icon(
+          const Icon(
             Icons.arrow_downward,
             color: Colors.red,
           ),
           Text(
-            'R\$80,00',
-            style: TextStyle(
+            'R\$ ${negativeValue.toStringAsFixed(2)}',
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.red,
             ),
