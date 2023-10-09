@@ -76,6 +76,7 @@ class _CustomFormAddState extends State<CustomFormAdd> {
                       () {
                         activityName.add(_nameController.text);
                         activityDescription.add(_descriptionController.text);
+
                         activityValue.add(valueForm);
                         totalValue += valueForm;
                         if (valueForm > 0) {
