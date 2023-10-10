@@ -4,6 +4,10 @@ import 'package:my_app/shared/themes/colors.dart';
 List<String> activityName = [];
 List<String> activityDescription = [];
 List<double> activityValue = [];
+List<double> listPositive = [];
+List<double> listNegative = [];
+List<double> listTotal = [];
+
 double totalValue = 0;
 double positiveValue = 0;
 double negativeValue = 0;
@@ -76,14 +80,16 @@ class _CustomFormAddState extends State<CustomFormAdd> {
                       () {
                         activityName.add(_nameController.text);
                         activityDescription.add(_descriptionController.text);
-
                         activityValue.add(valueForm);
                         totalValue += valueForm;
+                        listTotal.add(totalValue);
                         if (valueForm > 0) {
                           positiveValue += valueForm;
+                          listPositive.add(valueForm);
                         }
                         if (valueForm < 0) {
                           negativeValue += valueForm;
+                          listNegative.add(valueForm);
                         }
                       },
                     );
