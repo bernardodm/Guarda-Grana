@@ -18,7 +18,6 @@ class _CreateLoginState extends State<CreateLogin> {
   final formKey = GlobalKey<FormState>();
   bool _mostrasenha = true;
   bool _mostrasenhaconfirma = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

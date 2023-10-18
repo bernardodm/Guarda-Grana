@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:my_app/pages/add/widgets/custom_form_add.dart';
 import 'package:my_app/shared/themes/colors.dart';
 
-class CustomAllValues extends StatelessWidget {
+class CustomAllValues extends StatefulWidget {
   const CustomAllValues({super.key});
 
+  @override
+  State<CustomAllValues> createState() => _CustomAllValuesState();
+}
+
+class _CustomAllValuesState extends State<CustomAllValues> {
   @override
   Widget build(BuildContext context) {
     return Center(
