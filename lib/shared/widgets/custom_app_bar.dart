@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           IconButton(
             color: Colors.white,
             iconSize: 30.0,
-            icon: const Icon(Icons.remove_red_eye),
+            icon: const Icon(Icons.visibility),
             onPressed: () {},
           ),
       ],

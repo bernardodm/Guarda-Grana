@@ -20,66 +20,78 @@ class CustomFormAdd extends StatefulWidget {
 }
 
 class _CustomFormAddState extends State<CustomFormAdd> {
-  final _formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
-  final _nameController = TextEditingController();
+  final nameController = TextEditingController();
 
-  final _descriptionController = TextEditingController();
+  final descriptionController = TextEditingController();
 
-  final _valueController = TextEditingController();
+  final valueController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.only(left: 50, right: 50, top: 100),
         child: Form(
-          key: _formKey,
+          key: formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: TextFormField(
-                  controller: _nameController,
-                  decoration: const InputDecoration(labelText: 'Nome'),
-                  validator: (v) => v!.isEmpty ? 'Digite um nome.' : null,
-                ),
+              TextFormField(
+                controller: nameController,
+                decoration: const InputDecoration(labelText: 'Nome'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo Obrigatório!';
+                  }
+                  return null;
+                },
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: TextFormField(
-                  controller: _descriptionController,
-                  decoration: const InputDecoration(labelText: 'Descrição'),
-                  validator: (v) => v!.isEmpty ? 'Digite uma descrição.' : null,
-                ),
+              const SizedBox(
+                height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 60),
-                child: TextFormField(
-                  controller: _valueController,
-                  decoration: const InputDecoration(labelText: 'Valor'),
-                  keyboardType: TextInputType.number,
-                  validator: (v) {
-                    if (v!.isEmpty) return 'Digite um valor.';
-                    final value = double.tryParse(v);
-                    if (value == null) return 'Valor inválido.';
-                    return null;
-                  },
-                ),
+              TextFormField(
+                controller: descriptionController,
+                decoration: const InputDecoration(labelText: 'Descrição'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo Obrigatório!';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                controller: valueController,
+                decoration: const InputDecoration(labelText: 'Valor'),
+                keyboardType: TextInputType.number,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo Obrigatório!';
+                  } else if (!RegExp(r'^\d+(\.\d+)?$').hasMatch(value)) {
+                    return 'Apenas números devem ser digitados';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(
+                height: 60,
               ),
               ElevatedButton(
                 style: const ButtonStyle(
                     backgroundColor:
                         MaterialStatePropertyAll(CustomColors.color5)),
                 onPressed: () {
-                  double valueForm = double.parse(_valueController.text);
-
-                  if (_formKey.currentState!.validate()) {
+                  if (formKey.currentState!.validate()) {
                     setState(
                       () {
-                        activityName.add(_nameController.text);
-                        activityDescription.add(_descriptionController.text);
+                        double valueForm = double.parse(valueController.text);
+
+                        activityName.add(nameController.text);
+                        activityDescription.add(descriptionController.text);
                         activityValue.add(valueForm);
                         totalValue += valueForm;
                         listTotal.add(totalValue);
@@ -93,9 +105,9 @@ class _CustomFormAddState extends State<CustomFormAdd> {
                         }
                       },
                     );
-                    _nameController.clear();
-                    _descriptionController.clear();
-                    _valueController.clear();
+                    nameController.clear();
+                    descriptionController.clear();
+                    valueController.clear();
                   }
                 },
                 child: const Text('Salvar'),
